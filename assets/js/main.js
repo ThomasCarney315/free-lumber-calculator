@@ -49,9 +49,9 @@
 
 })(jQuery);
 
-//Lumber calculator
+//Lumber calculator V1 
 
-
+//event listener to trigger all calculations to update numbers after any change-----------------------------------------------------------------------
 document.querySelector('table.alt').addEventListener('input', calcLumber)
 //add event listener button Calculate button 
 
@@ -81,7 +81,7 @@ let lineTotalA3
 
 let total
 let tax
-
+//Lumber per line volume calculation functions---------------------------------------------------------------------------
 function calcTotalVolume1(){
 	let width = document.querySelector('#row1 .width').value
 	let hight = document.querySelector('#row1 .hight').value
@@ -162,6 +162,8 @@ function calcTotalVolume10(){
 	totalVolume10 = hight * width * length * quantity / 1000000
 	document.querySelector('#row10 .totalVolume').innerHTML = `${totalVolume10} m3`
 }
+
+//Lumber line total price calculations ---------------------------------------------------------------------------------------
 function calcLineTotal1(){
 	let price = document.querySelector('#row1 .price').value
 	lineTotal1 = price * totalVolume1
@@ -212,6 +214,8 @@ function calcLineTotal10(){
 	lineTotal10 = price * totalVolume10
 	document.querySelector('#row10 .lineTotal').innerHTML = lineTotal10.toFixed(2)
 }
+
+//Additional items line total price calculation functions ------------------------------------------------------
 function calcLineTotalA1(){
 	let price = document.querySelector('#rowA1 .price').value
 	lineTotalA1 = price * document.querySelector('#rowA1 .quantity').value
@@ -229,11 +233,13 @@ function calcLineTotalA3(){
 }
 
 
-
+// Function totaling all line totals into total-----------------------------------------------------------------
 function calcTotal(){
 	total = lineTotal1 +lineTotal2 + lineTotal3 + lineTotal4 + lineTotal5 + lineTotal6 + lineTotal7 + lineTotal8 + lineTotal9 + lineTotal10 + lineTotalA1 + lineTotalA2 + lineTotalA3
 	document.querySelector('#total').innerHTML = total.toFixed(2)
 }
+
+// Function calculating tax and updating total ater tax----------------------------------------------------------
 function calcTax(){
 	let taxRate = document.querySelector('#taxRate').value
 	tax = total * (taxRate * .01)
@@ -241,6 +247,7 @@ function calcTax(){
 	document.querySelector('#tax').innerHTML = tax.toFixed(2)
 	document.querySelector('#totalAfterTax').innerHTML = totalAfterTax.toFixed(2)
 }
+// function calling all calculation functions triggerd by event listener----------------------------------------------
 function calcLumber(){
 	calcTotalVolume1()
 	calcTotalVolume2()
