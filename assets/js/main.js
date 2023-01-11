@@ -78,6 +78,10 @@ let lineTotal10
 let lineTotalA1
 let lineTotalA2
 let lineTotalA3
+let lineTotalA4
+let lineTotalA5
+let lineTotalA6
+let lineTotalA7
 
 let total
 let tax
@@ -231,11 +235,31 @@ function calcLineTotalA3(){
 	lineTotalA3 = price * document.querySelector('#rowA3 .quantity').value
 	document.querySelector('#rowA3 .lineTotal').innerHTML = lineTotalA3.toFixed(2)
 }
+function calcLineTotalA4(){
+	let price = document.querySelector('#rowA4 .price').value
+	lineTotalA4 = price * document.querySelector('#rowA4 .quantity').value
+	document.querySelector('#rowA4 .lineTotal').innerHTML = lineTotalA4.toFixed(2)
+}
+function calcLineTotalA5(){
+	let price = document.querySelector('#rowA5 .price').value
+	lineTotalA5 = price * document.querySelector('#rowA5 .quantity').value
+	document.querySelector('#rowA5 .lineTotal').innerHTML = lineTotalA5.toFixed(2)
+}
+function calcLineTotalA6(){
+	let price = document.querySelector('#rowA6 .price').value
+	lineTotalA6 = price * document.querySelector('#rowA6 .quantity').value
+	document.querySelector('#rowA6 .lineTotal').innerHTML = lineTotalA6.toFixed(2)
+}
+function calcLineTotalA7(){
+	let price = document.querySelector('#rowA7 .price').value
+	lineTotalA7 = price * document.querySelector('#rowA7 .quantity').value
+	document.querySelector('#rowA7 .lineTotal').innerHTML = lineTotalA7.toFixed(2)
+}
 
 
 // Function totaling all line totals into total-----------------------------------------------------------------
 function calcTotal(){
-	total = lineTotal1 +lineTotal2 + lineTotal3 + lineTotal4 + lineTotal5 + lineTotal6 + lineTotal7 + lineTotal8 + lineTotal9 + lineTotal10 + lineTotalA1 + lineTotalA2 + lineTotalA3
+	total = lineTotal1 +lineTotal2 + lineTotal3 + lineTotal4 + lineTotal5 + lineTotal6 + lineTotal7 + lineTotal8 + lineTotal9 + lineTotal10 + lineTotalA1 + lineTotalA2 + lineTotalA3 + lineTotalA4 + lineTotalA5 + lineTotalA6 + lineTotalA7
 	document.querySelector('#total').innerHTML = total.toFixed(2)
 }
 
@@ -272,6 +296,10 @@ function calcLumber(){
 	calcLineTotalA1()
 	calcLineTotalA2()
 	calcLineTotalA3()
+	calcLineTotalA4()
+	calcLineTotalA5()
+	calcLineTotalA6()
+	calcLineTotalA7()
 	calcTotal()
 	calcTax()
 }
