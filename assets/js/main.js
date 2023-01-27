@@ -54,6 +54,25 @@
 //event listener to trigger all calculations to update numbers after any change-----------------------------------------------------------------------
 document.querySelector('table.alt').addEventListener('input', calcLumber)
 //add event listener button Calculate button 
+document.querySelector('#print-view').addEventListener('click', togglePrintView)
+document.querySelector('#full-view').addEventListener('click', toggleFullView)
+
+function togglePrintView(){
+	document.querySelector('#footer').style.display = 'none'
+	document.querySelector('#header').style.display = 'none'
+	document.querySelector('.major h2').style.display = 'none'
+	document.querySelector('#full-view').classList.toggle('hidden')
+	document.querySelector('#print-view').style.display ='none'
+	
+}
+function toggleFullView(){
+	document.querySelector('#footer').style.display = 'block'
+	document.querySelector('#header').style.display = 'flex'
+	document.querySelector('.major h2').style.display = 'block'
+	document.querySelector('#full-view').classList.toggle('hidden')
+	document.querySelector('#print-view').style.display ='inline-block'
+	
+}
 
 let totalVolume1
 let totalVolume2

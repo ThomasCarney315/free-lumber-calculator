@@ -4166,3 +4166,9 @@ input, select, textarea {
 		}
 
 	}
+
+/* Hidden display class for button toggling to hide for printing view */
+
+.hidden {
+	display: none;
+}
