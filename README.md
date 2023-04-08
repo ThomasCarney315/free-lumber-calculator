@@ -1,4 +1,4 @@
-# free-lumber-calculator
+# Free Lumber Calculator
 
 ### What 
 - A web application with the purpose of providing a template to input lumber dimensions and pricing that is automatically calculated into accurate volumes, prices, and totals. I designed it in a format that can be easily used for invoiving and record keeping.
